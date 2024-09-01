@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ Nuvalkicks - Buscador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #333;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            color: #e91e63;
+        }
+        
+        .container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .search-box {
+            margin-bottom: 20px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #e91e63;
+        }
+        
+        .sneaker-list {
+            list-style: none;
+            padding: 0;
+        }
+        .sneaker-item {
+            background-color: #2c2c2c;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+
+        }
+        .sneaker-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .sneaker-item a {
+            color: #e91e63;
+            text-decoration: none;
+        }
+        .sneaker-item a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"><header>
+        <h1>AJ Nuvalkicks</h1>
+    </header>
+    <nav>
+        <a href="aj_nuvalkicks.html" class="back-link">Home</a>
+        <a href="buscador.html" class="back-link">Modelos de sneakers</a>
+        <a href="Anúncios propios.html" class="back link">Anuncios Próprios</a>
+        <a href="#">Blog</a>
+        <a href="#">Contato</a>
+
+        <h1>Buscador de Sneakers</h1>
+    </div>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="searchSneakers()" placeholder="Buscar sneakers...">
+        </div>
+        <ul id="sneakerList" class="sneaker-list">
+            <li class="sneaker-item"><img src="J1 Chicago" alt="Detalhes" style="width:100px;">
+    </a>
+<a href="detalles-J1Chicago L&F.html"> Jordan 1 Retro - Chicago</a></li> 
+            <li class="sneaker-item"><img src="J3 Black Cement" alt="Detalhes" style="width:100px;"><a href="detalles-J3 Black Cement.html">Jordan 3 Retro - Black Cement (2024)</a></li>
+            <li class="sneaker-item"><img src="J11 CoolGrey" alt="Detalhes" style="width:100px;">
+    <a href="detalles-J11 CoolGrey.html">Jordan 11 Retro - Cool Grey (2021)</a></li>
+            <li class="sneaker-item"><img src="AF1" alt="Detalhes" style="width:80px;">
+    <a href="detalles-AF1W.html">Air Force 1 - White</a></li>
+            <li class="sneaker-item"><img src="Vans knuskool" alt="Detalhes" style="width:88px;">
+    <a href="detalles-Vans knuskool.html">Vans Knu Skool - Black and White</a></li>
+            <li class="sneaker-item"><img src="Yeezy slide bone" alt="Detalhes" style="width:100px;"><a href="detalles- slidesbone.html">Yeezy Slide - Bone</a></li>
+            <li class="sneaker-item"><img src="J4 WC" alt="Detalhes" style="width:80px;">
+    <a href="detalles-J4WC.html">Jordan 4 - Wet Cement</a></li>
+            <!-- Añade más ítems aquí -->
+        </ul>
+    </div>
+
+    <script>
+        function searchSneakers() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("sneakerList");
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
